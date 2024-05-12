@@ -25,7 +25,7 @@ class HomePageState extends State<HomePage> {
         ],
         backgroundColor: Colors.red,
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
