@@ -1,6 +1,6 @@
 # project_00
 
-A new Flutter project.
+Minha primeira tentativa de um app em Flutter. Pouca coisa, mas já é um começo.
 
 ## Getting Started
 
