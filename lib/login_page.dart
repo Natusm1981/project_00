@@ -40,43 +40,66 @@ class _LoginPageState extends State<LoginPage> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Padding(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: Image.asset('lib/assets/images/Earth_(blank).png'),
+              SizedBox(
                 height: 200,
+                child: Image.asset('lib/assets/images/Earth_(blank).png'),
               ),
-              TextField(
-                onChanged: (value) {
-                  email = value;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Username ou e-mail'),
-              ),
-              const SizedBox(height: 15),
-              TextField(
-                obscureText: true,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: 'Password'),
-                onChanged: (value) {
-                  password = value;
-                },
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                  onPressed: () {
-                    if (email == 'natuss.m@gmail.com' && password == '123') {
-                      print('PERMITIDO');
-                      Navigator.of(context).pushReplacementNamed('/home');
-                    } else {
-                      print('NAO AUTORIZADO');
-                    }
-                  },
-                  child: Text("Login"))
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 20, bottom: 10),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (value) {
+                          email = value;
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Username ou e-mail'),
+                      ),
+                      const SizedBox(height: 15),
+                      TextField(
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Password'),
+                        onChanged: (value) {
+                          password = value;
+                        },
+                      ),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                          onPressed: () {
+                            if (email == 'natuss.m@gmail.com' &&
+                                password == '123') {
+                              print('PERMITIDO');
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/home');
+                            } else {
+                              print('NAO AUTORIZADO');
+                            }
+                          },
+                          style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                  Size(double.infinity, 50)),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blueGrey),
+                              elevation: MaterialStateProperty.all<double>(10),
+                              alignment: Alignment.center),
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ))
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

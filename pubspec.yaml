@@ -64,6 +64,7 @@ flutter:
   assets:
     - lib/assets/images/Earth_(blank).png
     - lib/assets/images/wall.jpeg
+    - lib/assets/images/nos_dois.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

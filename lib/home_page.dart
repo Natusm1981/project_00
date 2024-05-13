@@ -18,6 +18,43 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.orange,
+        child: Column(
+          children: [
+            SizedBox(height: 30),
+            UserAccountsDrawerHeader(
+              accountName: Text("natus"),
+              accountEmail: Text("natuss.m@gmail.com"),
+              currentAccountPicture: ClipOval(
+                //borderRadius: BorderRadius.circular(100),
+                child: Image.asset(
+                  'lib/assets/images/nos_dois.jpg',
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text(
+                "INICIO",
+                style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
+              leading: Icon(Icons.home),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/home');
+              },
+            ),
+            ListTile(
+              title: Text(
+                "LogOut",
+                style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
+              ),
+              leading: Icon(Icons.exit_to_app),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: const [
